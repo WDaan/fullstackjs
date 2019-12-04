@@ -1,0 +1,46 @@
+version: "3.6"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl:/etc/nginx/ssl
+
+  web:
+    build: "./web"
+    container_name: web
+    ports:
+      - "88:8080"
+    depends_on:
+      - db
+
+  server:
+    build: "./server"
+    container_name: server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+  adminmongo:
+    image: mrvautin/adminmongo
+    container_name: adminmongo
+    restart: unless-stopped
+    ports:
+      - "1234:1234"
+    environment:
+      - HOST=0.0.0.0
