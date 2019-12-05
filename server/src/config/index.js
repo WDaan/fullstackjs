@@ -1,4 +1,4 @@
-let DB_URI = 'mongodb://db:27017/'
+let DB_URI = 'mongodb://localhost:27017/fullstack'
 
 if (process.env.MONGO_DB_URI) {
     DB_URI = process.env.MONGO_DB_URI

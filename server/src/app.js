@@ -4,7 +4,6 @@ const Book = require('./models/books_model')
 
 const app = express()
 
-
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {

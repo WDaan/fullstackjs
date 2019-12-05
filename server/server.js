@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const app = require('./src/app')
 const { DB_URI } = require('./src/config')
 
-mongoose.connect(DB_URI)
+mongoose.connect(DB_URI, { useMongoClient: true })
+mongoose.Promise = global.Promise
 
 app.listen(3000, () => {
     console.log('running on port 3000')

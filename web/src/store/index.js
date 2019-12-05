@@ -13,7 +13,7 @@ export default new Vuex.Store({
             state.books = []
             try {
                 const res = await BookService.getBooks()
-                state.books.push(res)
+                state.books.push(...res)
             } catch (e) {
                 console.log(e)
             }
@@ -21,8 +21,6 @@ export default new Vuex.Store({
         async createBook(state, book) {
             try {
                 const res = await BookService.createBook(book)
-                console.log(res)
-                state.books.push(res)
             } catch (e) {
                 console.log(e)
             }
