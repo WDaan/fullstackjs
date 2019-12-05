@@ -11,9 +11,9 @@
 - nginx reverse proxy with SSL
 - docker containers for every service (combined in docker-compose)
 - linting & testing setup for each service
-- pre-commit linting & testing hooks
+- pre-commit linting & testing hooks (husky)
 
-### ssl certificates steps
+### ssl certificates steps:
 
 - install mkcert
 - run mkcert -install
