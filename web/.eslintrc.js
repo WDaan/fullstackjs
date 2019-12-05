@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     env: {
-        node: true,
+        node: true
     },
     extends: ['plugin:vue/essential', '@vue/airbnb'],
     rules: {
@@ -12,16 +12,18 @@ module.exports = {
         'no-undef': 0,
         'no-plusplus': 0,
         'no-unused-vars': 0,
+        'no-unused-expressions': 0,
+        'comma-dangle': 0
     },
     parserOptions: {
-        parser: 'babel-eslint',
+        parser: 'babel-eslint'
     },
     overrides: [
         {
             files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
             env: {
-                jest: true,
-            },
-        },
-    ],
+                jest: true
+            }
+        }
+    ]
 }

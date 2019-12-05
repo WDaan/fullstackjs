@@ -14,8 +14,8 @@
 
 ### ssl certificates steps
 
-install mkcert
-run mkcert -install
-run mckert mydomain.whatever
-place .crt & .key in ssl folder
-set mydomain.whatever in the default.conf
+- install mkcert
+- run mkcert -install
+- run mckert mydomain.whatever
+- place .crt & .key in ssl folder
+- set mydomain.whatever in the default.conf

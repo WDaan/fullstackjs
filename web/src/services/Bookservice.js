@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-class BookService {
+export default class BookService {
     static getBooks() {
         return new Promise(async (resolve, reject) => {
             try {
@@ -13,6 +13,7 @@ class BookService {
     }
 
     static createBook(book) {
+        console.log(book)
         return new Promise(async (resolve, reject) => {
             try {
                 const res = axios.post('/api/v1/books', book)

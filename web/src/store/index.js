@@ -8,9 +8,8 @@ export default new Vuex.Store({
     state: {
         books: [],
     },
-    mutations: {},
-    actions: {
-        getBooks: state => async () => {
+    mutations: {
+        async getBooks(state) {
             state.books = []
             try {
                 const res = await BookService.getBooks()
@@ -19,15 +18,17 @@ export default new Vuex.Store({
                 console.log(e)
             }
         },
-        createBook: (state, book) => async () => {
+        async createBook(state, book) {
             try {
                 const res = await BookService.createBook(book)
+                console.log(res)
                 state.books.push(res)
             } catch (e) {
                 console.log(e)
             }
         },
     },
+    actions: {},
     getters: {
         state_getBooks: state => () => state.books,
     },

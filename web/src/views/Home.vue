@@ -26,8 +26,8 @@ export default {
     },
     methods: {
         getBooks() {
-            this.$store.dispatch('state_getBooks')
+            this.state_getBooks
         },
-    },
+    }
 }
 </script>
